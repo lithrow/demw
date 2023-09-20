@@ -21,5 +21,20 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes
 })
-
+router.beforeEach((to, from) => {
+  let token = localStorage.getItem('token')
+  if(token) {
+    if(to.path !== '/') {
+      return true
+    } else {
+      return '/about'
+    }
+  } else {
+    if(to.path === '/') {
+      return true
+    } else {
+      return '/'
+    }
+  }
+})
 export default router

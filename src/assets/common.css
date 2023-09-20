@@ -1,0 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+html, body, #app, .page {
+  height: 100%;
+  margin: 0;
+}
